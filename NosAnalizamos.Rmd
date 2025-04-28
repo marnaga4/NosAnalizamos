@@ -22,5 +22,4 @@ datos_sin_limpiar <-read.delim(ruta,skip = 24) #Saltamos 24 filas.
 
 datos <- datos_sin_limpiar %>% filter(!if_all(everything(), is.na)) 
 head(datos)
-
 ```
