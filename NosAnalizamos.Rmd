@@ -1,0 +1,12 @@
+---
+title: "NosAnalizamos"
+author: "Marta Navarro Garcia"
+date: "2025-04-28"
+output: html_document
+---
+
+1.Cargamos las librerias.
+```{r}
+
+
+```
