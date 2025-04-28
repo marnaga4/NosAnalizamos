@@ -1,0 +1,26 @@
+---
+title: "NosAnalizamos"
+author: "Marta Navarro Garcia"
+date: "2025-04-28"
+output: html_document
+---
+
+1.Cargamos las librerias que vamos a utilizar (solo las que no hayan sido ya instaladas).
+```{r}
+librerias <- c("tidyverse", "readr")
+librerias_instalar <- librerias[!(librerias %in% installed.packages()[,"Package"])]
+if(length(librerias_instalar)) install.packages(librerias_instalar)
+lapply(librerias, library, character.only = TRUE)
+
+```
+
+2.Cargamos el conjunto de datos con el que vamos a trabajar y después lo limpiaremos para que solo contenga las filas y columnas que tienen variables.
+
+```{r}
+ruta <- "data/NosAutoanalizamos2022 - Hoja1.tsv"
+datos_sin_limpiar <-read.delim(ruta,skip = 24) #Saltamos 24 filas.
+
+datos <- datos_sin_limpiar %>% filter(!if_all(everything(), is.na)) 
+head(datos)
+
+```
