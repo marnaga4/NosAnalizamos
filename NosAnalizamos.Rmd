@@ -5,8 +5,11 @@ date: "2025-04-28"
 output: html_document
 ---
 
-1.Cargamos las librerias.
+1.Cargamos las librerias que vamos a utilizar (solo las que no hayan sido ya instaladas).
 ```{r}
-
+librerias <- c("tidyverse", "readr")
+librerias_instalar <- librerias[!(librerias %in% installed.packages()[,"Package"])]
+if(length(librerias_instalar)) install.packages(librerias_instalar)
+lapply(librerias, library, character.only = TRUE)
 
 ```
